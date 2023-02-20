@@ -1,0 +1,29 @@
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+   
+  }
+  
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+  }
+
+.form-floating{
+    padding: 8px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    background-color: #f6e3b1;
+    border: none;
+    color: black;
+    padding: 10px 105px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+}

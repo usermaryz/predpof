@@ -1,0 +1,39 @@
+<div>
+  <!-- Взято с bootstrap -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="home">Достопримечательности ВДНХ</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <div>
+            <a class="nav-link" routerLink="home">Точки маршрутов</a>
+          </div>
+            <a class="nav-link" routerLink="about">Готовые маршруты</a>
+          <div *ngIf="auth.getLogged()">
+              <button class="btn btn-link" (click)="logout()">Выйти</button>
+              <a class="nav-link" routerLink="account">Личный кабинет</a>
+            </div>
+            <div *ngIf="!auth.getLogged()">
+              <a class="nav-link" routerLink="login">Войти</a>
+            </div>
+            <div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+<div>
+  <router-outlet></router-outlet>
+</div>

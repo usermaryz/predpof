@@ -1,0 +1,75 @@
+
+<div class="form-signin">
+  <h1 class="h3 mb-3 fw-normal">Вход</h1>
+<div>
+  <form [formGroup]="loginGroup" (ngSubmit)="login()">
+    <div>
+      <label for="floatingInput">Логин/Почта</label>
+      <div class="form-floating">
+      <input
+        type="text"
+        placeholder="name@example.com"
+        formControlName="email"
+        (input)="checkLogin()"
+      />
+    </div>
+      <div class="alert alert-danger"
+        *ngIf="
+          loginGroup.controls['email'].invalid &&
+          loginGroup.controls['email'].touched
+        "
+      >
+        Заполните почту
+      </div>
+    </div>
+    <div *ngIf="showpassword">
+      <label for="floatingPassword">Пароль</label>
+      <div class="form-floating">
+      <input
+        type="text"
+        placeholder="qwerty1234"
+        formControlName="password"
+        (input)="checkPassword()"
+      />
+    </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="
+          loginGroup.controls['password'].invalid &&
+          loginGroup.controls['password'].touched
+        "
+      >
+        Заполните пароль
+      </div>
+    </div>
+
+    <div *ngIf="showphone">
+      <label for="floatingPassword">Номер телефона</label>
+      <div class="form-floating">
+      <input
+        type="text"
+        placeholder="+7(233)655-78-98"
+        formControlName="phone"
+      />
+    </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="
+          loginGroup.controls['phone'].invalid &&
+          loginGroup.controls['phone'].touched
+        "
+      >
+        Заполните номер телефона
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      [disabled]="!loginGroup.valid"
+      class="btn btn-outline-success"
+    >
+      Войти
+    </button>
+  </form>
+</div>
+</div>

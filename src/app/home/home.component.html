@@ -1,0 +1,32 @@
+<body>
+<div class="card-container">
+    <div *ngFor="let post of home">
+      <div class="card" style="width: 19rem">
+        <img [src]="post.imageUrl" class="card-img-top" alt="логотип партнера" />
+        <div class="card-body">
+          <h5 class="card-title">Место: {{ post.name }}</h5>
+          <div class="card-text">
+            <div>от Павильона №1: <b> {{ post.cost }} мин </b> </div>
+            <a [href]="post.author">Как добраться</a>
+            <div>Описание: {{ post.text }}</div>
+            <div>
+              <i>
+                Рейтинг: {{ post.rating }}
+              </i>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer" *ngIf="post.amount">
+            <button
+            class="w-100 btn btn-lg btn-primary"
+            type="submit"
+            (click)="doBook(post.cost, post.id)">
+            <b>
+              Построить маршрут
+            </b>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
